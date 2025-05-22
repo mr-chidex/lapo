@@ -1,74 +1,86 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
+import Sidebar from "./Sidebar";
+import DashboardHeader from "./DashboardHeader";
+import DashboardIcon from "../icons/DashboardIcon";
+import BranchesIcon from "../icons/BranchesIcon";
+import RolesIcon from "../icons/RolesIcon";
+import UsersIcon from "../icons/UsersIcon";
+import CardSchemeIcon from "../icons/CardSchemeIcon";
+import CardProfileIcon from "../icons/CardProfileIcon";
+import CardRequestIcon from "../icons/CardRequestIcon";
+import StockIcon from "../icons/StockIcon";
+import CardsIcon from "../icons/CardsIcon";
+import AuthListIcon from "../icons/AuthListIcon";
+import AuthQueueIcon from "../icons/AuthQueueIcon";
+import TrailIcon from "../icons/TrailIcon";
+import AccountIcon from "../icons/AccountIcon";
 
-const menuItems = [
-  "Branches",
-  "Roles",
-  "Users",
-  "Card Scheme",
-  "Card Profile",
-  "Card Request",
-  "Stock",
-  "Cards",
-  "Authorization List",
-  "Authorization Queue",
-  "Trail",
-  "Account",
-];
+const pageMap = {
+  "/dashboard": {
+    name: "Dashboard",
+    icon: <DashboardIcon className="w-5 h-5" />,
+  },
+  "/dashboard/branches": {
+    name: "Branches",
+    icon: <BranchesIcon className="w-5 h-5" />,
+  },
+  "/dashboard/roles": {
+    name: "Roles",
+    icon: <RolesIcon className="w-5 h-5" />,
+  },
+  "/dashboard/users": {
+    name: "Users",
+    icon: <UsersIcon className="w-5 h-5" />,
+  },
+  "/dashboard/card-scheme": {
+    name: "Card Scheme",
+    icon: <CardSchemeIcon className="w-5 h-5" />,
+  },
+  "/dashboard/card-profile": {
+    name: "Card Profile",
+    icon: <CardProfileIcon className="w-5 h-5" />,
+  },
+  "/dashboard/card-request": {
+    name: "Card Request",
+    icon: <CardRequestIcon className="w-5 h-5" />,
+  },
+  "/dashboard/stock": {
+    name: "Stock",
+    icon: <StockIcon className="w-5 h-5" />,
+  },
+  "/dashboard/cards": {
+    name: "Cards",
+    icon: <CardsIcon className="w-5 h-5" />,
+  },
+  "/dashboard/authorization-list": {
+    name: "Authorization List",
+    icon: <AuthListIcon className="w-5 h-5" />,
+  },
+  "/dashboard/authorization-queue": {
+    name: "Authorization Queue",
+    icon: <AuthQueueIcon className="w-5 h-5" />,
+  },
+  "/dashboard/trail": {
+    name: "Trail",
+    icon: <TrailIcon className="w-5 h-5" />,
+  },
+  "/dashboard/account": {
+    name: "Account",
+    icon: <AccountIcon className="w-5 h-5" />,
+  },
+};
 
 const DashboardLayout = () => {
+  const location = useLocation();
+  const page = pageMap[location.pathname] || pageMap["/dashboard"];
+
   return (
     <div className="flex min-h-screen bg-gray-100">
-      {/* Sidebar */}
-      <aside className="w-64 bg-white border-r flex flex-col justify-between">
-        <div>
-          <div className="flex items-center h-20 px-6 border-b">
-            <span className="font-bold text-xl text-orange-600">LAPO</span>
-          </div>
-          <nav className="mt-6">
-            <ul>
-              <li className="px-6 py-3 text-blue-700 font-semibold bg-blue-50 rounded-r-full mb-2">
-                Dashboard
-              </li>
-              {menuItems.map((item) => (
-                <li
-                  key={item}
-                  className="px-6 py-3 text-gray-700 hover:bg-gray-100 cursor-pointer rounded-r-full mb-2"
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-        <div className="px-6 py-4 border-t">
-          <button className="text-red-500 font-semibold">Logout</button>
-          <div className="mt-8 text-xs text-gray-400">
-            Powered by cardinfra.
-          </div>
-        </div>
-      </aside>
+      <Sidebar />
       {/* Main Content */}
-      <div className="flex-1 flex flex-col">
-        {/* Header */}
-        <header className="h-20 bg-white border-b flex items-center justify-between px-8">
-          <div>
-            <h2 className="text-lg font-semibold">
-              Hi [User], what would you like to do today?
-            </h2>
-            <div className="text-xs text-gray-400">Last login: [date/time]</div>
-          </div>
-          <div className="flex items-center gap-4">
-            <input
-              type="text"
-              placeholder="Search"
-              className="border rounded px-3 py-1"
-            />
-            <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
-              U
-            </div>
-          </div>
-        </header>
+      <div className="flex-1 flex flex-col ml-64">
+        <DashboardHeader page={page} />
         {/* Content */}
         <main className="flex-1 p-8 overflow-y-auto">
           <Outlet />

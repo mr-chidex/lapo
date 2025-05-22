@@ -9,7 +9,7 @@ const RingIcon = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="17.5" cy="8.5" r="60.5" stroke="#014DAF" stroke-width="24" />
+      <circle cx="17.5" cy="8.5" r="60.5" stroke="#014DAF" strokeWidth="24" />
     </svg>
   );
 };

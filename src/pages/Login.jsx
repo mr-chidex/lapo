@@ -31,7 +31,7 @@ export default function Login() {
       if (success) {
         setTimeout(() => {
           //simulate a loading state
-          navigate("/dashboard");
+          navigate("/dashboard", { replace: true });
           setIsLoading(false);
         }, 4000);
       } else {

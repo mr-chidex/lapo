@@ -9,10 +9,16 @@ import Dashboard from "./pages/Dashboard";
 import { AuthProvider } from "./context/AuthContext";
 import { useAuth } from "./context/useAuth";
 import DashboardLayout from "./components/DashboardLayout";
+import Branches from "./pages/Branches";
 
 function PrivateRoute({ children }) {
-  const { user } = useAuth();
-  return user ? children : <Navigate to="/" />;
+  const { isAuthenticated } = useAuth();
+  return isAuthenticated() ? children : <Navigate to="/" />;
+}
+
+function PublicRoute({ children }) {
+  const { isAuthenticated } = useAuth();
+  return !isAuthenticated() ? children : <Navigate to="/dashboard" />;
 }
 
 function App() {
@@ -20,7 +26,14 @@ function App() {
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route
+            path="/"
+            element={
+              <PublicRoute>
+                <Login />
+              </PublicRoute>
+            }
+          />
           <Route
             path="/dashboard"
             element={
@@ -29,7 +42,8 @@ function App() {
               </PrivateRoute>
             }
           >
-            <Route index element={<Dashboard />} />
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="branches" element={<Branches />} />
             {/* Add more protected routes here as children */}
           </Route>
         </Routes>

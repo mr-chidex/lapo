@@ -6,9 +6,17 @@ export default {
       colors: {
         dark: {
           600: "#121212",
+          700: "#101828",
         },
         light: {
+          50: "#F6F6F6",
+          100: "#D0D5DD",
+          150: "#F2F4F7",
           600: "#808080",
+          900: "#344054",
+        },
+        primary: {
+          50: "#014DAF",
         },
       },
       backgroundImage: {
@@ -18,6 +26,9 @@ export default {
       },
       fontFamily: {
         satoshi: ["Satoshi", "sans-serif"],
+      },
+      boxShadow: {
+        "header-search": "0px 0.98px 1.96px 0px #1018280D",
       },
     },
   },
