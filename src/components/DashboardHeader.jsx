@@ -1,15 +1,13 @@
 import React from "react";
 import BellIcon from "../icons/BellIcon";
-import UserCircleIcon from "../icons/UserCircleIcon";
 import SeacrhIcon from "../icons/SeacrhIcon";
-import UsersIcon from "../icons/UsersIcon";
 import { UserIcon } from "../icons/userIcon";
 
 const DashboardHeader = ({ page }) => (
   <header className="h-16 bg-white border-b flex items-center justify-between px-8">
     <div className="flex items-center gap-2 text-dark-600 font-medium">
       <span>{page.icon}</span>
-      <span className="ml-2 text-sm font-medium">{page.name}</span>
+      <span className="ml-2 text-sm tet-dark-500 font-medium">{page.name}</span>
     </div>
     <div className="flex items-center gap-3">
       <div className="flex items-center relative">

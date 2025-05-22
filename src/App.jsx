@@ -10,6 +10,17 @@ import { AuthProvider } from "./context/AuthContext";
 import { useAuth } from "./context/useAuth";
 import DashboardLayout from "./components/DashboardLayout";
 import Branches from "./pages/Branches";
+import Roles from "./pages/Roles";
+import Users from "./pages/Users";
+import CardScheme from "./pages/CardScheme";
+import CardProfile from "./pages/CardProfile";
+import CardRequest from "./pages/CardRequest";
+import Stock from "./pages/Stock";
+import Cards from "./pages/Cards";
+import AuthorizationList from "./pages/AuthorizationList";
+import AuthorizationQueue from "./pages/AuthorizationQueue";
+import Trail from "./pages/Trail";
+import Account from "./pages/Account";
 
 function PrivateRoute({ children }) {
   const { isAuthenticated } = useAuth();
@@ -44,7 +55,20 @@ function App() {
           >
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="branches" element={<Branches />} />
-            {/* Add more protected routes here as children */}
+            <Route path="roles" element={<Roles />} />
+            <Route path="users" element={<Users />} />
+            <Route path="card-scheme" element={<CardScheme />} />
+            <Route path="card-profile" element={<CardProfile />} />
+            <Route path="card-request" element={<CardRequest />} />
+            <Route path="stock" element={<Stock />} />
+            <Route path="cards" element={<Cards />} />
+            <Route path="authorization-list" element={<AuthorizationList />} />
+            <Route
+              path="authorization-queue"
+              element={<AuthorizationQueue />}
+            />
+            <Route path="trail" element={<Trail />} />
+            <Route path="account" element={<Account />} />
           </Route>
         </Routes>
       </Router>

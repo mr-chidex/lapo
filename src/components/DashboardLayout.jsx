@@ -19,55 +19,55 @@ import AccountIcon from "../icons/AccountIcon";
 const pageMap = {
   "/dashboard": {
     name: "Dashboard",
-    icon: <DashboardIcon className="w-5 h-5" />,
+    icon: <DashboardIcon activeStyle="#001735" className="w-5 h-5" />,
   },
   "/dashboard/branches": {
     name: "Branches",
-    icon: <BranchesIcon className="w-5 h-5" />,
+    icon: <BranchesIcon activeStyle="#001735" className="w-5 h-5" />,
   },
   "/dashboard/roles": {
     name: "Roles",
-    icon: <RolesIcon className="w-5 h-5" />,
+    icon: <RolesIcon activeStyle="#001735" className="w-5 h-5" />,
   },
   "/dashboard/users": {
     name: "Users",
-    icon: <UsersIcon className="w-5 h-5" />,
+    icon: <UsersIcon activeStyle="#001735" className="w-5 h-5" />,
   },
   "/dashboard/card-scheme": {
     name: "Card Scheme",
-    icon: <CardSchemeIcon className="w-5 h-5" />,
+    icon: <CardSchemeIcon activeStyle="#001735" className="w-5 h-5" />,
   },
   "/dashboard/card-profile": {
     name: "Card Profile",
-    icon: <CardProfileIcon className="w-5 h-5" />,
+    icon: <CardProfileIcon activeStyle="#001735" className="w-5 h-5" />,
   },
   "/dashboard/card-request": {
     name: "Card Request",
-    icon: <CardRequestIcon className="w-5 h-5" />,
+    icon: <CardRequestIcon activeStyle="#001735" className="w-5 h-5" />,
   },
   "/dashboard/stock": {
     name: "Stock",
-    icon: <StockIcon className="w-5 h-5" />,
+    icon: <StockIcon activeStyle="#001735" className="w-5 h-5" />,
   },
   "/dashboard/cards": {
     name: "Cards",
-    icon: <CardsIcon className="w-5 h-5" />,
+    icon: <CardsIcon activeStyle="#001735" className="w-5 h-5" />,
   },
   "/dashboard/authorization-list": {
     name: "Authorization List",
-    icon: <AuthListIcon className="w-5 h-5" />,
+    icon: <AuthListIcon activeStyle="#001735" className="w-5 h-5" />,
   },
   "/dashboard/authorization-queue": {
     name: "Authorization Queue",
-    icon: <AuthQueueIcon className="w-5 h-5" />,
+    icon: <AuthQueueIcon activeStyle="#001735" className="w-5 h-5" />,
   },
   "/dashboard/trail": {
     name: "Trail",
-    icon: <TrailIcon className="w-5 h-5" />,
+    icon: <TrailIcon activeStyle="#001735" className="w-5 h-5" />,
   },
   "/dashboard/account": {
     name: "Account",
-    icon: <AccountIcon className="w-5 h-5" />,
+    icon: <AccountIcon activeStyle="#001735" className="w-5 h-5" />,
   },
 };
 
@@ -82,7 +82,7 @@ const DashboardLayout = () => {
       <div className="flex-1 flex flex-col ml-64">
         <DashboardHeader page={page} />
         {/* Content */}
-        <main className="flex-1 p-8 overflow-y-auto">
+        <main className="flex-1 p-8 bg-secondary-50 overflow-y-auto">
           <Outlet />
         </main>
       </div>

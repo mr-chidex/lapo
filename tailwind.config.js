@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         dark: {
+          500: "#001735",
           600: "#121212",
           700: "#101828",
         },
@@ -17,6 +18,9 @@ export default {
         },
         primary: {
           50: "#014DAF",
+        },
+        secondary: {
+          50: "#F1F7FF",
         },
       },
       backgroundImage: {
