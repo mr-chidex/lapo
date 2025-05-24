@@ -18,7 +18,7 @@ import AccountIcon from "../icons/AccountIcon.jsx";
 import DashboardIcon from "../icons/DashboardIcon.jsx";
 import LogoutIcon from "../icons/LogoutIcon.jsx";
 
-const Sidebar = () => {
+const Sidebar = ({ isCollapsed }) => {
   const { logout } = useAuth();
   const navigate = useNavigate();
 
@@ -154,16 +154,28 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className="w-64 bg-white border-r flex flex-col justify-between py-4 fixed h-screen z-30 overflow-y-auto scrollbar-none">
+    <aside
+      className={`${
+        isCollapsed ? "w-20" : "w-64"
+      } bg-white border-r flex flex-col justify-between py-4 fixed h-screen z-30 overflow-y-auto scrollbar-none transition-all duration-300`}
+    >
       <div>
-        <div className="flex py-4 px-4 h-[45px] w-[138.32px] mb-2">
-          <img src={logo} alt="LAPO" className="h-12" />
+        <div
+          className={`flex py-4 px-4 h-[45px] ${
+            isCollapsed ? "justify-center" : ""
+          }`}
+        >
+          <img
+            src={logo}
+            alt="LAPO"
+            className={`h-12 ${isCollapsed ? "w-12" : "w-[138.32px]"}`}
+          />
         </div>
         <nav className="mt-10 px-4">
           <ul>
             {menuItems.map((item, idx) => (
               <li key={item.label} className={idx === 1 ? "mt-4" : ""}>
-                {item.label === "Branches" && (
+                {item.label === "Branches" && !isCollapsed && (
                   <div className="px-6 py-2 text-[8.5px] text-gray-400 tracking-widest font-medium">
                     MAIN MENU
                   </div>
@@ -178,11 +190,12 @@ const Sidebar = () => {
                     }`
                   }
                   end={item.label === "Dashboard"}
+                  title={isCollapsed ? item.label : ""}
                 >
                   <span className="w-5 h-5 flex items-center justify-center">
                     {item.icon}
                   </span>
-                  <span>{item.label}</span>
+                  {!isCollapsed && <span>{item.label}</span>}
                 </NavLink>
               </li>
             ))}
@@ -190,21 +203,35 @@ const Sidebar = () => {
         </nav>
       </div>
 
-      <div className="flex flex-col items-center gap-8 px-6  pb-4 pt-2 bg-white border-t ">
+      <div
+        className={`flex flex-col items-center gap-8 px-6 pb-4 pt-2 bg-white border-t ${
+          isCollapsed ? "px-2" : ""
+        }`}
+      >
         <button
           onClick={handleLogout}
-          className="mt-6 flex text-sm items-center gap-2 text-gray-700  font-medium w-full justify-start"
+          className={`mt-6 flex text-sm items-center gap-2 text-gray-700 font-medium w-full ${
+            isCollapsed ? "justify-center" : "justify-start"
+          }`}
+          title={isCollapsed ? "Logout" : ""}
         >
-          <LogoutIcon className="w-5 h-5" /> Logout
+          <LogoutIcon className="w-5 h-5" />
+          {!isCollapsed && "Logout"}
         </button>
-        <div className="w-full flex flex-col mt-8">
-          <span className="text-[8.5px] text-gray-400 tracking-widest mb-2">
-            POWERED BY
-          </span>
+        <div
+          className={`w-full flex flex-col mt-8 ${
+            isCollapsed ? "items-center" : ""
+          }`}
+        >
+          {!isCollapsed && (
+            <span className="text-[8.5px] text-gray-400 tracking-widest mb-2">
+              POWERED BY
+            </span>
+          )}
           <img
             src={cardinfraLogo}
             alt="cardinfra"
-            className="h-[43px] w-[93.33px]"
+            className={`${isCollapsed ? "h-8 w-8" : "h-[43px] w-[93.33px]"}`}
           />
         </div>
       </div>

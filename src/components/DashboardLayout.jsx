@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import DashboardHeader from "./DashboardHeader";
@@ -15,6 +15,8 @@ import AuthListIcon from "../icons/AuthListIcon";
 import AuthQueueIcon from "../icons/AuthQueueIcon";
 import TrailIcon from "../icons/TrailIcon";
 import AccountIcon from "../icons/AccountIcon";
+import MenuIcon from "../icons/MenuIcon";
+import { useMediaQuery } from "../hooks/useMediaQuery";
 
 const pageMap = {
   "/dashboard": {
@@ -74,12 +76,26 @@ const pageMap = {
 const DashboardLayout = () => {
   const location = useLocation();
   const page = pageMap[location.pathname] || pageMap["/dashboard"];
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  const isDesktop = useMediaQuery("(min-width:1200px)");
+
+  useEffect(() => {
+    if (isDesktop) {
+      setIsCollapsed(false);
+    } else {
+      setIsCollapsed(true);
+    }
+  }, [isDesktop]);
 
   return (
     <div className="flex min-h-screen bg-gray-100">
-      <Sidebar />
+      <Sidebar isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
       {/* Main Content */}
-      <div className="flex-1 flex flex-col ml-64">
+      <div
+        className={`flex-1 flex flex-col transition-all duration-300 ${
+          isCollapsed ? "ml-20" : "ml-64"
+        }`}
+      >
         <DashboardHeader page={page} />
         {/* Content */}
         <main className="flex-1 p-4 bg-secondary-50 overflow-y-auto">

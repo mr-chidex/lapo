@@ -61,7 +61,7 @@ export default function Analytics() {
         <div className="w-full bg-light-100 h-[0.38px]" />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2">
         {analytics.map((a) => (
           <div
             key={a.label}

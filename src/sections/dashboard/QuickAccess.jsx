@@ -20,7 +20,7 @@ export default function QuickAccess() {
         {quickAccess.map((item) => (
           <button
             key={item.label}
-            className="flex-1 w-full max-w-[278px] text-sm flex items-center gap-3 bg-blue-50 hover:bg-blue-100 transition rounded-lg px-6 py-4 font-medium text-dark-600"
+            className="flex-1 w-full xl:max-w-[278px] text-nowrap text-sm flex items-center gap-3 bg-blue-50 hover:bg-blue-100 transition rounded-lg px-6 py-4 font-medium text-dark-600"
           >
             <span className="bg-primary-50 grid place-items-center text-white h-[28px] w-[28px] rounded-full">
               {item.icon}
