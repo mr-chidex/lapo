@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "../context/useAuth";
 import { Link, useNavigate } from "react-router-dom";
-import { UserIcon } from "../icons/userIcon";
 import LockIcon from "../icons/LockIcon";
 import PasswordIcon from "../icons/PasswordIcon";
 import RingIcon from "../icons/RingIcon";
@@ -9,6 +8,7 @@ import active from "../assets/active_preview.png";
 import dashboardPreview from "../assets/login_preview.png";
 import CardInfraIcon from "../assets/cardinfra_logo.svg";
 import Spinner from "../components/Spinner";
+import UserIcon from "../icons/userIcon";
 
 export default function Login() {
   const [username, setUsername] = useState("");

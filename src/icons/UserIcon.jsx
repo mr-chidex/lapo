@@ -1,6 +1,6 @@
 import React from "react";
 
-export const UserIcon = () => {
+const UserIcon = () => {
   return (
     <svg
       width="14"
@@ -36,3 +36,5 @@ export const UserIcon = () => {
     </svg>
   );
 };
+
+export default UserIcon;
