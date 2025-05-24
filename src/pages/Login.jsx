@@ -26,22 +26,21 @@ export default function Login() {
     setIsLoading(true);
     setError("");
 
-    try {
-      const success = login(username, password);
-      if (success) {
-        setTimeout(() => {
-          //simulate a loading state
+    //simulate a loading state for test purposes
+    setTimeout(() => {
+      try {
+        const success = login(username, password);
+        if (success) {
           navigate("/dashboard", { replace: true });
-          setIsLoading(false);
-        }, 4000);
-      } else {
-        setError("Invalid username or password");
+        } else {
+          setError("Invalid username or password");
+        }
+      } catch (err) {
+        setError(err?.message || "An error occurred. Please try again.");
+      } finally {
+        setIsLoading(false);
       }
-    } catch (err) {
-      setError(err?.message || "An error occurred. Please try again.");
-    } finally {
-      // setIsLoading(false);
-    }
+    }, 4000);
   };
 
   return (
