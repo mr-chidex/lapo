@@ -1,8 +1,7 @@
 import React from "react";
 import BellIcon from "../icons/BellIcon";
 import SeacrhIcon from "../icons/SeacrhIcon";
-import { UserIcon } from "../icons/userIcon";
-import MenuIcon from "../icons/MenuIcon";
+import UserIcon from "../icons/userIcon";
 
 const DashboardHeader = ({ page }) => (
   <header className="h-16 bg-white border-b flex items-center justify-between px-8">
