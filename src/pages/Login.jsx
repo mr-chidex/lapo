@@ -58,8 +58,10 @@ export default function Login() {
             <p className="mb-8 text-xs text-light-600">
               Please sign in using your credentials
             </p>
-            <span className="text-gray-400 text-xs">
-              (Test: username - admin/password - password)
+            <span className="text-gray-500 text-xs">
+              (Test Login &gt; username:{" "}
+              <span className="text-dark-600">admin</span>
+              &nbsp;/ password: <span className="text-dark-600">password</span>)
             </span>
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="relative">
