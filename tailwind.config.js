@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         dark: {
+          400: "#0000008F",
           500: "#001735",
           600: "#121212",
           700: "#101828",
@@ -13,7 +14,11 @@ export default {
           50: "#F6F6F6",
           100: "#D0D5DD",
           150: "#F2F4F7",
+          200: "#E2E2E2",
+          250: "#F9FAFB",
+          300: "#EAECF0",
           600: "#808080",
+          800: "#475467",
           900: "#344054",
         },
         primary: {
@@ -21,6 +26,27 @@ export default {
         },
         secondary: {
           50: "#F1F7FF",
+          100: "#CCE2FF",
+        },
+        alt: {
+          50: "#EFFAF6",
+          100: "#E78020",
+          150: "#CCE2FF",
+        },
+        success: {
+          50: "#ECFDF3",
+          200: "#ABEFC6",
+          400: "#067647",
+        },
+        warning: {
+          50: "#FFFAEB",
+          200: "#FEDF89",
+          400: "#B54708",
+        },
+        info: {
+          50: "#EFF8FF",
+          200: "#B2DDFF",
+          400: "#175CD3",
         },
       },
       backgroundImage: {

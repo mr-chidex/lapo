@@ -53,7 +53,7 @@ function App() {
               </PrivateRoute>
             }
           >
-            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="" element={<Dashboard />} />
             <Route path="branches" element={<Branches />} />
             <Route path="roles" element={<Roles />} />
             <Route path="users" element={<Users />} />

@@ -82,7 +82,7 @@ const DashboardLayout = () => {
       <div className="flex-1 flex flex-col ml-64">
         <DashboardHeader page={page} />
         {/* Content */}
-        <main className="flex-1 p-8 bg-secondary-50 overflow-y-auto">
+        <main className="flex-1 p-4 bg-secondary-50 overflow-y-auto">
           <Outlet />
         </main>
       </div>
