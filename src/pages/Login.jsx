@@ -8,7 +8,7 @@ import active from "../assets/active_preview.png";
 import dashboardPreview from "../assets/login_preview.png";
 import CardInfraIcon from "../assets/cardinfra_logo.svg";
 import Spinner from "../components/Spinner";
-import UserIcon from "../icons/userIcon";
+import ProfileIcon from "../icons/ProfileIcon";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -69,7 +69,7 @@ export default function Login() {
                   Username
                 </label>
                 <span className="absolute left-3 top-12 -translate-y-1/2">
-                  <UserIcon />
+                  <ProfileIcon />
                 </span>
                 <input
                   type="text"

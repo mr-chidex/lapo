@@ -1,7 +1,7 @@
 import React from "react";
 import BellIcon from "../icons/BellIcon";
 import SeacrhIcon from "../icons/SeacrhIcon";
-import UserIcon from "../icons/userIcon";
+import ProfileIcon from "../icons/ProfileIcon";
 
 const DashboardHeader = ({ page }) => (
   <header className="h-16 bg-white border-b flex items-center justify-between px-8">
@@ -22,7 +22,7 @@ const DashboardHeader = ({ page }) => (
         <BellIcon className="w-5 h-5 text-gray-500" />
       </button>
       <button className="w-10 h-10 flex items-center justify-center rounded-full bg-light-150 border border-light-100 hover:bg-light-50">
-        <UserIcon className="w-5 h-5 text-gray-500" />
+        <ProfileIcon className="w-5 h-5 text-gray-500" />
       </button>
     </div>
   </header>
